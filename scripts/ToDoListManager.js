@@ -16,6 +16,15 @@ class ToDoListManager {
     addTask(task) {
         this._tasks.push(task);
     }
+
+    removeTask(oldTask) {
+        for (let i = 0; i < this._tasks.length; i++) {
+            if (this._tasks[i] == oldTask) {
+                this._tasks.splice(i);
+                break;
+            }
+        }
+    }
     
     findTasks(keyword) {
         let found = [];
@@ -27,3 +36,6 @@ class ToDoListManager {
         return found;
     }
 }
+
+
+export default ToDoListManager;

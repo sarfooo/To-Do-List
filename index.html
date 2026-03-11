@@ -4,7 +4,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <script src="./script.js"></script>
+        <script type="module" src="./scripts/script.js"></script>
+        <script type="module" src="./scripts/ToDoListManager.js"></script>
         <title>To-Do List!</title>
     </head>
 
@@ -13,17 +14,20 @@
             <div class="header">
                 <h1>To-Do List</h1>
                 <form>
-                    <input type="text" minlength="3" id="search" name="search">
-                    <button>Search for task</button>
+                    <input type="text" id="search" name="search">
                 </form>
             </div>
 
             <div class="task-container">
-                <form>
-                    <input type="text" minlength="3" required id="text" name="text">
+                <form id="task-form">
+                    <input type="text" minlength="3" required id="task" name="task">
                     <button>Add Task</button>
                 </form>
-                <div class="list-grid"></div>
+                
+
+                <ul id="task-list"></ul>
+                
+                <button id="clear-tasks">Clear Tasks</button>
             </div>
         </div>
 
