@@ -1,0 +1,3 @@
+class ToDoListManager {
+    _tasks = []
+}
