@@ -2,15 +2,24 @@
     box-sizing: border-box;
 }
 
+body {
+    color: white;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    background: #3F5EFB;
+    background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+}
+
+
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .header h1 {
-    padding-left: 50px;
+    padding-left: 100px;
 }
+  
 
 .header form {
     display: grid;
@@ -55,4 +64,10 @@
 
 #task-list li::before {
     content: counter(task) ". ";
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background-color: white;
 }
