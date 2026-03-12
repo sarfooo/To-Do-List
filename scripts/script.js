@@ -16,16 +16,29 @@ function addTask(task, isDisplay) {
         todoListManager.removeTask(task);
     });
     li.append(marker);
-    
+
+    let previousTask;
     span.textContent = task;
+    span.setAttribute("contentEditable", "true")
+    span.addEventListener("focus", () => { previousTask = span.textContent })
+    span.addEventListener("blur", (event) => { handleTextEditing(event, previousTask, span.textContent) }, {once: true})
     li.append(span);
-    tasks.append(li); 
     
+    tasks.append(li); 
     if (!isDisplay) {
         todoListManager.addTask(task);
     }
 }
 
+function handleTextEditing(event, previousTask, newTask) {
+    console.log(previousTask, newTask);
+    if (previousTask !== newTask) {
+        console.log("HERE!");
+        event.target.textContent = newTask
+        todoListManager.removeTask(previousTask);
+        todoListManager.addTask(newTask);
+    }
+}
 
 
 function removeTask(task) {
