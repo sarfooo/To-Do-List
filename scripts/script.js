@@ -31,9 +31,7 @@ function addTask(task, isDisplay) {
 }
 
 function handleTextEditing(event, previousTask, newTask) {
-    console.log(previousTask, newTask);
     if (previousTask !== newTask) {
-        console.log("HERE!");
         event.target.textContent = newTask
         todoListManager.removeTask(previousTask);
         todoListManager.addTask(newTask);
