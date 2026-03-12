@@ -20,7 +20,7 @@ class ToDoListManager {
     removeTask(oldTask) {
         for (let i = 0; i < this._tasks.length; i++) {
             if (this._tasks[i] == oldTask) {
-                this._tasks.splice(i);
+                this._tasks.splice(i, 1);
                 break;
             }
         }

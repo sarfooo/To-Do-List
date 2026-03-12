@@ -66,7 +66,7 @@ function restoreTasks() {
 }
 
 let taskForm = document.getElementById("task-form");
-taskForm.addEventListener("submit", () => {
+taskForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const formData = new FormData(taskForm);
@@ -75,7 +75,7 @@ taskForm.addEventListener("submit", () => {
 })
 
 let search = document.getElementById("search");
-search.addEventListener("input", () => {
+search.addEventListener("input", (event) => {
     if (event.target.value.length < 1) {
         restoreTasks();
     }
